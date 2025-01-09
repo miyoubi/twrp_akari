@@ -38,3 +38,9 @@ on boot
     insmod /vendor/lib/clearpad_i2c.ko
     write /sys/devices/virtual/input/clearpad/post_probe_start 1
     start health-hal-2-1
+    start vendor.qseecomd
+
+on property:twrp.modules.loaded=true
+    # Mount debugfs
+    mount debugfs debugfs /sys/kernel/debug
+    chmod 0755 /sys/kernel/debug
