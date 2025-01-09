@@ -64,6 +64,7 @@ BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 # Prebuilt
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz-dtb
+TARGET_FORCE_PREBUILT_KERNEL := true
 
 # OTA
 TARGET_OTA_ASSERT_DEVICE := akari
