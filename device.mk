@@ -47,6 +47,8 @@ PRODUCT_PACKAGES += \
     bootctrl.sdm845 \
     bootctrl.sdm845.recovery
 
+PRODUCT_PACKAGES_DEBUG += \
+    bootctl
 # QCOM Decryption
 PRODUCT_PACKAGES += \
     qcom_decrypt \
