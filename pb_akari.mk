@@ -22,11 +22,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 $(call inherit-product, device/sony/akari/device.mk)
 
 # Inherit some common TWRP stuff.
-$(call inherit-product, vendor/twrp/config/common.mk)
+$(call inherit-product, vendor/pb/config/common.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := akari
-PRODUCT_NAME := twrp_akari
+PRODUCT_NAME := pb_akari
 PRODUCT_BRAND := sony
 PRODUCT_MODEL := akari
 PRODUCT_MANUFACTURER := sony

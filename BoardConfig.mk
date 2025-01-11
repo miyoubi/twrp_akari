@@ -9,6 +9,12 @@ DEVICE_PATH := device/sony/akari
 
 ALLOW_MISSING_DEPENDENCIES := true
 
+# PBRP specific build flags
+PB_DISABLE_DEFAULT_DM_VERITY := true
+
+# PB Torch
+PB_TORCH_PATH := "/sys/class/leds/led:torch_0"
+
 # Broken Rules
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
@@ -168,3 +174,7 @@ TARGET_USES_UEFI := true
 
 # VINTF
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
+
+#Properties
+TW_OVERRIDE_SYSTEM_PROPS := \
+    "ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental"
