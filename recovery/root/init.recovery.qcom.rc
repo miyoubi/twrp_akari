@@ -31,9 +31,6 @@ on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 
-on post-fs
-	start boot-hal-1-0
-
 on boot
     setprop sys.usb.config adb
     write /sys/devices/virtual/input/clearpad/post_probe_start 1
@@ -43,4 +40,3 @@ on property:twrp.modules.loaded=true
     # Mount debugfs
     mount debugfs debugfs /sys/kernel/debug
     chmod 0755 /sys/kernel/debug
-
