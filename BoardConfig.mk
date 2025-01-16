@@ -56,7 +56,9 @@ BOARD_KERNEL_SEPARATED_DTBO := true
 
 TARGET_KERNEL_SOURCE := kernel/sony/sdm845
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CONFIG := tama_akari_defconfig
+TARGET_KERNEL_CONFIG := vendor/sdm845-perf_defconfig
+TARGET_KERNEL_CONFIG += vendor/sony/akari.config
+
 TARGET_KERNEL_ADDITIONAL_FLAGS += HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 
 BOARD_KERNEL_CMDLINE := \
@@ -70,9 +72,9 @@ BOARD_KERNEL_CMDLINE := \
     androidboot.configfs=true \
     loop.max_part=7 \
     androidboot.usbcontroller=a600000.dwc3 \
-    panic_on_err=1 \
-    msm_drm.dsi_display0=dsi_panel_cmd_display:config0
+    panic_on_err=1
 
+BOARD_KERNEL_CMDLINE += msm_drm.dsi_display0=somc,default_cmd_panel:config0
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 # Prebuilt
